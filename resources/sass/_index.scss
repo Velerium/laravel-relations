@@ -2,31 +2,43 @@
     margin-top: 60px;
     margin-bottom: 60px;
 
-    .partial {
-        height: 800px;
-        display: flex;
-        flex-wrap: wrap;        
+    .small-container {
+        margin-bottom: 30px;
 
-        .big {
-            height: 100%;
-            width: 50%;
-            padding: 10px;
+        .partial {
+            height: 800px;
+            display: flex;
+            flex-wrap: wrap;        
 
-            .big-content {
+            .big {
                 height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                width: 50%;
+                padding: 10px;
 
-                .small {
-                    border: 1px solid black;
-                    height: 45%;
+                .big-content {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .small {
+                        border: 1px solid black;
+                        height: 45%;
+                    }
+                }
+
+                .border {
+                    border: 1px solid black !important;
+                }
+
+                h3 {
+                    text-align: center;
                 }
             }
-
-            .border {
-                border: 1px solid black !important;
-            }
         }
+    }
+
+    .pagination {
+        justify-content: center;
     }
 }
