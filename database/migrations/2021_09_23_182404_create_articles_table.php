@@ -19,15 +19,16 @@ class CreateArticlesTable extends Migration
             $table->date('date');
             $table->string('author', 50);
             $table->string('subtitle', 150);
-            $table->string('category');
             $table->text('content');
             $table->text('picture');
             $table->unsignedBigInteger('author_id');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
         });
 
         Schema::table('articles', function (Blueprint $table) {
             $table->foreign('author_id')->references('id')->on('authors');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

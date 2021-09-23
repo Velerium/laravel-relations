@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -12,9 +13,12 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
-    {
-        //
+    {   
+        $categoryList = Category::all();
+        $articleList = Article::paginate(6);
+        return view('index', compact('categoryList'), compact('articleList'));
     }
 
     /**
@@ -24,7 +28,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('article.createArticle');
+        return view('articles.createArticle');
     }
 
     /**

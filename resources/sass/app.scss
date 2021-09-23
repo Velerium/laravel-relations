@@ -1,8 +1,69 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 // Variables
 @import 'variables';
+@import 'index';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: $blue;
+    padding: 20px 15px 0;
+
+    h2 {
+        margin: 0 auto 15px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $cyan;
+        
+        ul {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            margin: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+            li {
+                margin-right: 15px;
+
+                a {
+                    color: black;
+
+                    &:hover {
+                        color: #555;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        margin-left: 20px;
+
+        li {
+            margin-right: 10px;
+        }
+    }
+}

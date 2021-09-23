@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Article;
 use App\Author;
+use App\Category;
 use Faker\Generator as Faker;
 
 class ArticlesTableSeeder extends Seeder
@@ -35,6 +36,16 @@ class ArticlesTableSeeder extends Seeder
             'Lifestyle',
         ];
 
+        $listOfCategoryID = [];
+
+        foreach ($categoryList as $category) {
+            $categoryObject = New Category();
+            $categoryObject->name = $category;
+            $categoryObject->save();
+
+            $listOfCategoryID[] = $categoryObject->id;
+        }
+
         for ($i = 0; $i < 30; $i++) {
             $articleObject = new Article();
             $articleObject->title = $faker->sentence(3);
@@ -42,7 +53,9 @@ class ArticlesTableSeeder extends Seeder
             $articleObject->author = $faker->word();
             $articleObject->subtitle = $faker->sentence(3);
             
-            $articleObject->category = array_rand(array_flip($categoryList), 1);
+            $categoryKey = array_rand($listOfCategoryID);
+            $categoryID = $listOfCategoryID[$categoryKey];
+            $articleObject->category_id = $categoryID;
             
             $articleObject->content = $faker->paragraphs(15, true);
             $articleObject->picture = $faker->imageUrl(640, 480, 'person', true);
