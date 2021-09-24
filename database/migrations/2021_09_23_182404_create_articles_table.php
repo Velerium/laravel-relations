@@ -17,7 +17,6 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('title', 50);
             $table->date('date');
-            $table->string('author', 50);
             $table->string('subtitle', 150);
             $table->text('content');
             $table->text('picture');

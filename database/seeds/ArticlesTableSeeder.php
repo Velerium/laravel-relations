@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Article;
 use App\Author;
 use App\Category;
+use App\Tag;
 use Faker\Generator as Faker;
 
 class ArticlesTableSeeder extends Seeder
@@ -23,8 +24,17 @@ class ArticlesTableSeeder extends Seeder
             $authorObject->eMail = $faker->email();
             $authorObject->postsMade = $faker->randomNumber(3, false);
             $authorObject->save();
-            $authorIDList[] = $i+1;
+            $authorIDList[] = $authorObject->id;
         };
+
+        $tagIDList = [];
+
+        for ($i = 0; $i < 15; $i++) {
+            $tagObject = New Tag();
+            $tagObject->name = $faker->word();
+            $tagObject->save();
+            $tagIDList[] = $tagObject->id;
+        }
 
         $categoryList = [
             'News & Affairs',
@@ -50,7 +60,6 @@ class ArticlesTableSeeder extends Seeder
             $articleObject = new Article();
             $articleObject->title = $faker->sentence(3);
             $articleObject->date = $faker->date();
-            $articleObject->author = $faker->word();
             $articleObject->subtitle = $faker->sentence(3);
             
             $categoryKey = array_rand($listOfCategoryID);
@@ -61,7 +70,13 @@ class ArticlesTableSeeder extends Seeder
             $articleObject->picture = $faker->imageUrl(640, 480, 'person', true);
             $articleObject->author_id = array_rand(array_flip($authorIDList), 1);
 
+            $tagKey = array_rand($tagIDList, 2);
+            $tag1 = $tagIDList[$tagKey[0]];
+            $tag2 = $tagIDList[$tagKey[1]];
+            
             $articleObject->save();
+
+            $articleObject->tag()->sync([$tag1, $tag2]);
         }
     }
 }

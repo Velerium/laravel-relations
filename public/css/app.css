@@ -1,48 +1,43 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;
 
 700&display=swap);@charset "UTF-8";
-.container {
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-.container .small-container {
+.small-container {
   margin-bottom: 30px;
 }
 
-.container .small-container .partial {
+.small-container .partial {
   height: 800px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.container .small-container .partial .big {
+.small-container .partial .big {
   height: 100%;
   width: 50%;
   padding: 10px;
 }
 
-.container .small-container .partial .big .big-content {
+.small-container .partial .big .big-content {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.container .small-container .partial .big .big-content .small {
+.small-container .partial .big .big-content .small {
   border: 1px solid black;
   height: 45%;
 }
 
-.container .small-container .partial .big .border {
+.small-container .partial .big .border {
   border: 1px solid black !important;
 }
 
-.container .small-container .partial .big h3 {
+.small-container .partial .big h3 {
   text-align: center;
 }
 
-.container .pagination {
+.pagination {
   justify-content: center;
 }
 
@@ -11032,6 +11027,11 @@ header nav ul li a {
 header nav ul li a:hover {
   color: #555;
   text-decoration: none;
+}
+
+.container {
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 footer {

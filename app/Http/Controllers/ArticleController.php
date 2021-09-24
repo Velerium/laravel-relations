@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -18,7 +19,7 @@ class ArticleController extends Controller
     {   
         $categoryList = Category::all();
         $articleList = Article::paginate(6);
-        return view('index', compact('categoryList'), compact('articleList'));
+        return view('index', compact('categoryList', 'articleList'));
     }
 
     /**
@@ -28,7 +29,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.createArticle');
+        $categoryList = Category::all();
+        $tagList = Tag::all();
+        return view('articles.createArticle', compact('categoryList', 'tagList'));
     }
 
     /**
@@ -41,7 +44,8 @@ class ArticleController extends Controller
     {
         $request->validate([
             'title' => 'required|max:50',
-            'body' => 'required'
+            'content' => 'required',
+            'picture' => 'nullable|url'
         ]);
         
         $article = New Article();
@@ -101,12 +105,11 @@ class ArticleController extends Controller
 
         $article->title = $data['title'];
         $article->date = $data['date'];
-        $article->author = $data['author'];
         $article->subtitle = $data['subtitle'];
-        $article->category = $data['category'];
         $article->content = $data['content'];
         $article->picture = $data['picture'];
         $article->author_id = $data['author_id'];
+        $article->category_id = $data['category_id'];
         $article->save();
     }
 }

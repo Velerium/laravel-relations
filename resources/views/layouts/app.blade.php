@@ -29,7 +29,9 @@
         </header>
     </div>
 
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
 
     <footer>
 
@@ -43,7 +45,5 @@
         <!-- <img src="https://t4.ftcdn.net/jpg/03/55/83/85/360_F_355838565_1QOwNcZ5j8CW6wLQ1VLTxptidGcSMSQE.jpg" alt="BoolNews Logo"> -->
 
     </footer>
-
-    </div>
 </body>
 </html>
