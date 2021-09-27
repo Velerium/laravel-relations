@@ -6,7 +6,7 @@
 }
 
 .small-container .partial {
-  height: 800px;
+  height: 650px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -22,20 +22,67 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
-.small-container .partial .big a {
+.small-container .partial .big .big-content a {
   height: 100%;
   display: block;
   border: 1px solid black;
-}
-
-.small-container .partial .big a.small {
-  height: 49%;
-}
-
-.small-container .partial .big .padding {
+  background-color: #eee;
+  color: black;
+  text-decoration: none;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.small-container .partial .big .big-content a.small {
+  height: 49%;
+  width: 100%;
+}
+
+.small-container .partial .big .big-content a:hover {
+  text-decoration: none;
+}
+
+.small-container .partial .big .big-content a .article-preview,
+.small-container .partial .big .big-content a .article-preview-small {
+  width: 100%;
+  overflow: hidden;
+}
+
+.small-container .partial .big .big-content a .article-preview img,
+.small-container .partial .big .big-content a .article-preview-small img {
+  float: right;
+  max-width: 200px;
+}
+
+.small-container .partial .big .big-content a .article-preview {
+  max-height: 250px;
+}
+
+.small-container .partial .big .big-content a .article-preview-small {
+  max-height: 150px;
+}
+
+.small-container .partial .big .big-content a .ad-box {
+  border: 3px solid brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  width: 100%;
+  background-color: #6cb2eb;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.small-container .partial .big .big-content a h3,
+.small-container .partial .big .big-content a h5,
+.small-container .partial .big .big-content a .article-preview {
+  margin-bottom: 40px;
 }
 
 .small-container .partial .big h3 {

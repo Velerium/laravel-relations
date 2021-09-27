@@ -55,7 +55,7 @@
     </div>
 
     <div class="form-group">
-        <input type="hidden" class="form-control" name="author_id" id="author_id" value=1>
+        <input type="hidden" class="form-control" name="author_id" id="author_id" value=6>
     </div>
 
     <div class="form-group">
