@@ -13,7 +13,7 @@
 
 <h1>Add some news</h1>
 
-<form action="{{ route('articles.store') }}" method="POST">
+<form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group">
@@ -51,7 +51,7 @@
 
     <div class="form-group">
         <label for="picture">Picture (optional)</label>
-        <input type="text" class="form-control" name="picture" id="picture">
+        <input type="file" class="form-control" name="picture" id="picture">
     </div>
 
     <div class="form-group">

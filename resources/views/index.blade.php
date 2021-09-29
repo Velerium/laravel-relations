@@ -11,7 +11,7 @@
         <div class="partial">
             <div class="big">
                 <div class="big-content">
-                    <a href="{{ route('articles.show', $articleList[$i]->id) }}">    
+                    <a href="{{ route('articles.show', $articleList[$i]->id) }}">
                         <h3>{{ $articleList[$i]->title }}</h3>
                         <h5>{{ $articleList[$i]->author->name }}, {{$articleList[$i]->date}}</h5>
                         <div class="article-preview">
@@ -22,6 +22,11 @@
                             <div>AD</div>
                         </div>
                         <div>Click to continue reading...</div>
+                        <form class="top-right" action="{{ route('articles.destroy', $articleList[$i]->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">&times;</button>
+                        </form>
                     </a>
                 </div>
                 @if (count($articleList) === ++$i)
@@ -40,6 +45,11 @@
                             <img src="{{ $articleList[$i]->picture }}" alt="">
                             <p>{{ $articleList[$i]->content }}</p>
                         </div>
+                        <form class="top-right" action="{{ route('articles.destroy', $articleList[$i]->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">&times;</button>
+                        </form>
                     </a>
                     @if (count($articleList) === ++$i)
                 </div>
@@ -55,6 +65,11 @@
                             <img src="{{ $articleList[$i]->picture }}" alt="">
                             <p>{{ $articleList[$i]->content }}</p>
                         </div>
+                        <form class="top-right" action="{{ route('articles.destroy', $articleList[$i]->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">&times;</button>
+                        </form>
                     </a>
                 </div>
             </div>
@@ -76,6 +91,11 @@
                             <img src="{{ $articleList[$i]->picture }}" alt="">
                             <p>{{ $articleList[$i]->content }}</p>
                         </div>
+                        <form class="top-right" action="{{ route('articles.destroy', $articleList[$i]->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">&times;</button>
+                        </form>
                     </a>
                     
                     @if (count($articleList) === ++$i)
@@ -92,6 +112,11 @@
                             <img src="{{ $articleList[$i]->picture }}" alt="">
                             <p>{{ $articleList[$i]->content }}</p>
                         </div>
+                        <form class="top-right" action="{{ route('articles.destroy', $articleList[$i]->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">&times;</button>
+                        </form>
                     </a>
 
                     @if (count($articleList) === ++$i)
@@ -110,12 +135,17 @@
                         <h5>{{ $articleList[$i]->author->name }}, {{$articleList[$i]->date}}</h5>
                         <div class="article-preview">
                             <img src="{{ $articleList[$i]->picture }}" alt="">
-                            <p>{{ $articleList[$i++]->content }}</p>
+                            <p>{{ $articleList[$i]->content }}</p>
                         </div>
                         <div class="ad-box">
                             <div>AD</div>
                         </div>
                         <div>Click to continue reading...</div>
+                        <form class="top-right" action="{{ route('articles.destroy', $articleList[$i++]->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">&times;</button>
+                        </form>
                     </a>
                 </div>
             </div>

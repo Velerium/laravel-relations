@@ -15,7 +15,7 @@
                     <div>Date of publishing:<h3>{{ $article->date }}</h3></div>
                 </div>
                 <h1>{{ $article->title }}</h1>
-                <img src="{{ $article->picture }}" alt="">
+                <img src="{{ asset('storage/' . $article->picture) }}" alt="">
                 <p><?=nl2br($article->content)?></p> <!-- nl2br, my new best friend. -->
 
                 <hr>

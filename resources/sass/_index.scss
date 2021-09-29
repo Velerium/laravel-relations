@@ -16,7 +16,6 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                align-items: center;
 
                 a {
                     height: 100%;
@@ -29,6 +28,20 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    position: relative;
+
+                    .top-right {
+                        position: absolute;
+                        top: 0;
+                        right: 3px;
+                        
+                        button {
+                            border: none;
+                            font-size: 20px;
+                            color: red;
+                            line-height: 20px;
+                        }
+                    }
 
                     &.small {
                         height: 49%;
